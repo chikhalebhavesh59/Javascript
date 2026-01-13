@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks Calculation</title>
+</head>
+<body>
+    <h2>Marks Calculation</h2>
+
+    <script>
+        // Input marks
+        let m1 = parseInt(prompt("Enter marks for Subject 1:"));
+        let m2 = parseInt(prompt("Enter marks for Subject 2:"));
+        let m3 = parseInt(prompt("Enter marks for Subject 3:"));
+        let m4 = parseInt(prompt("Enter marks for Subject 4:"));
+        let m5 = parseInt(prompt("Enter marks for Subject 5:"));
+
+        // Calculate sum and average
+        let sum = m1 + m2 + m3 + m4 + m5;
+        let avg = sum / 5;
+
+        // Determine grade
+        let grade;
+        if (avg >= 90)
+            grade = "A+";
+        else if (avg >= 80)
+            grade = "A";
+        else if (avg >= 70)
+            grade = "B";
+        else if (avg >= 60)
+            grade = "C";
+        else if (avg >= 50)
+            grade = "D";
+        else
+            grade = "Fail";
+
+        // Display result
+        document.write("Total Marks = " + sum + "<br>");
+        document.write("Average Marks = " + avg + "<br>");
+        document.write("Grade = " + grade);
+    </script>
+</body>
+</html>
