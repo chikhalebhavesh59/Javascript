@@ -55,27 +55,24 @@
 
 <script>
     function validateLogin() {
-        // Predefined credentials
         const correctUsername = "admin";
         const correctPassword = "12345";
 
-        // User input
         let username = document.getElementById("username").value;
         let password = document.getElementById("password").value;
         let message = document.getElementById("message");
 
-        // Validation using conditions
         if (username === "" || password === "") {
             message.style.color = "red";
-            message.innerHTML = "⚠️ All fields are required";
+            message.innerHTML = "All fields are required";
         } 
         else if (username === correctUsername && password === correctPassword) {
             message.style.color = "green";
-            message.innerHTML = "✅ Login Successful";
+            message.innerHTML = "Login Successful";
         } 
         else {
             message.style.color = "red";
-            message.innerHTML = "❌ Invalid Username or Password";
+            message.innerHTML = "Invalid Username or Password";
         }
     }
 </script>
