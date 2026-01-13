@@ -26,7 +26,7 @@
 </head>
 <body>
 
-    <h1> Number Guessing Game</h1>
+    <h1>Number Guessing Game</h1>
     <p>Guess a number between <b>1 and 10</b></p>
 
     <input type="number" id="guess" placeholder="Enter number">
@@ -35,7 +35,6 @@
     <div id="result"></div>
 
     <script>
-        
         const randomNumber = Math.floor(Math.random() * 10) + 1;
         let attempts = 0;
 
@@ -44,5 +43,20 @@
             const result = document.getElementById("result");
             attempts++;
 
-            if (!userGuess) {
-                result.textConten
+            if (!userGuess || userGuess < 1 || userGuess > 10) {
+                result.textContent = "Please enter a valid number between 1 and 10.";
+                return;
+            }
+
+            if (userGuess === randomNumber) {
+                result.textContent = " Correct! You guessed the number in " + attempts + " attempts.";
+            } else if (userGuess < randomNumber) {
+                result.textContent = "Too low! Try again.";
+            } else {
+                result.textContent = "Too high! Try again.";
+            }
+        }
+    </script>
+
+</body>
+</html>
