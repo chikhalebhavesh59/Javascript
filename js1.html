@@ -1,38 +1,45 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Marks Calculation</title>
-</head>
-<body>
-    <h2>Marks Calculation</h2>
+const readline = require("readline");
 
-    <script>
-        let m1 = parseInt(prompt("Enter marks for Subject 1:"));
-        let m2 = parseInt(prompt("Enter marks for Subject 2:"));
-        let m3 = parseInt(prompt("Enter marks for Subject 3:"));
-        let m4 = parseInt(prompt("Enter marks for Subject 4:"));
-        let m5 = parseInt(prompt("Enter marks for Subject 5:"));
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-        let sum = m1 + m2 + m3 + m4 + m5;
-        let avg = sum / 5;
+rl.question("Enter marks of Subject 1: ", (m1) => {
+    rl.question("Enter marks of Subject 2: ", (m2) => {
+        rl.question("Enter marks of Subject 3: ", (m3) => {
+            rl.question("Enter marks of Subject 4: ", (m4) => {
+                rl.question("Enter marks of Subject 5: ", (m5) => {
 
-        let grade;
-        if (avg >= 90)
-            grade = "A+";
-        else if (avg >= 80)
-            grade = "A";
-        else if (avg >= 70)
-            grade = "B";
-        else if (avg >= 60)
-            grade = "C";
-        else if (avg >= 50)
-            grade = "D";
-        else
-            grade = "Fail";
+                    let s1 = Number(m1);
+                    let s2 = Number(m2);
+                    let s3 = Number(m3);
+                    let s4 = Number(m4);
+                    let s5 = Number(m5);
 
-        document.write("Total Marks = " + sum + "<br>");
-        document.write("Average Marks = " + avg + "<br>");
-        document.write("Grade = " + grade);
-    </script>
-</body>
-</html>
+                    let sum = s1 + s2 + s3 + s4 + s5;
+                    let avg = sum / 5;
+
+                    let grade;
+                    if (avg >= 75) {
+                        grade = "Distinction";
+                    } else if (avg >= 60) {
+                        grade = "First Class";
+                    } else if (avg >= 50) {
+                        grade = "Second Class";
+                    } else if (avg >= 40) {
+                        grade = "Pass";
+                    } else {
+                        grade = "Fail";
+                    }
+
+                    console.log("\nTotal Marks =", sum);
+                    console.log("Average Marks =", avg);
+                    console.log("Grade =", grade);
+
+                    rl.close();
+                });
+            });
+        });
+    });
+});
